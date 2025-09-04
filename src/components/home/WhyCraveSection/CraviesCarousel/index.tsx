@@ -2,11 +2,10 @@ import {
   Carousel, 
   CarouselContent, 
   CarouselItem, 
-} from '../../../ui/carousel';
+} from '@/components/ui/carousel';
 import { benefits } from '@/data/mockData';
 import CraviesCarouselCard from './CraviesCarouselCard';
 import { motion } from 'framer-motion';
-
 
 const CraviesCarousel = () => {
   return (

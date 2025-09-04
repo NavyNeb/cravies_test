@@ -1,30 +1,22 @@
 import { flavoursPack } from "@/data/mockData";
-import { Section } from "lucide-react";
 import React from "react";
-import FlavourCard from "./FlavourCard";
 import { Button } from "../../ui/button";
-
-/**
- * Exact-ish reproduction of the provided hero slice using TailwindCSS.
- * Notes:
- * - Uses Google Font "Bangers" for the chunky headline (close to the reference).
- * - The white stepped shape under the headline is built with clip-path.
- * - Colors sampled to visually match the screenshot.
- */
+import FlavourCard from "./FlavourCard";
+import { Link } from "react-router-dom";
 
 const CheckItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <span className="inline-flex items-center gap-2 text-[13px] md:text-sm text-neutral-800">
-    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-black/20 bg-white shadow-[0_1px_0_0_rgba(0,0,0,0.15)]">
+  <span className="inline-flex items-center gap-2 text-[13px] md:text-sm text-black-app">
+    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-black-app shadow-[0_1px_0_0_rgba(0,0,0,0.15)]">
       <svg
         width="12"
         height="12"
         viewBox="0 0 20 20"
-        fill="none"
+        fill=""
         xmlns="http://www.w3.org/2000/svg"
       >
         <path
           d="M5 10.5l3 3 7-7"
-          stroke="#111"
+          stroke="#fff"
           strokeWidth="2.2"
           strokeLinecap="round"
           strokeLinejoin="round"
@@ -38,18 +30,18 @@ const CheckItem: React.FC<{ children: React.ReactNode }> = ({ children }) => (
 export default function HeroSection() {
   return (
     <React.Fragment>
-      <section className="relative isolate overflow-hidden bg-yellow-app pt-24">
+      <section className="relative flex flex-col justify-center isolate overflow-hidden bg-yellow-app pt-24">
         {/* Yellow background */}
         {/* <div className="absolute inset-0 bg-yellow" /> */}
         <div
-          className="relative bottom-0 -translate-x-2 z-0 h-[100%] w-[100%] bg-white"
+          className="absolute bottom-0 -translate-x-2.5 translate-y-[260px] h-[100%] w-[100%] bg-white"
           style={{
             clipPath: "polygon(10% 0, 90% 0, 100% 60%, 0 60%)",
             borderRadius: 8,
           }}
-        >
+        />
           {/* Content container */}
-          <div className="relative w-full mx-auto px-4 pt-10 md:pt-16 md:pb-12">
+          <div className="relative w-full mx-auto px-4 pt-10 md:pt-16 md:pb-12 bg ">
             {/* Headline block with white pedestal shape */}
             <div className="relative mx-auto w-full">
               {/* white stepped pedestal behind heading */}
@@ -61,31 +53,31 @@ export default function HeroSection() {
                 }}
               >
                 <span className="bg-white px-4 py-2">TASTES BAD</span>
-                <span className="block">FOR YOU. BUT ISN'T.</span>
+                <span className="block pt-6">FOR YOU. BUT ISN'T.</span>
               </h1>
             </div>
 
             {/* Feature bullets */}
-            <div className="mt-4 flex items-center justify-center gap-5 md:mt-6">
+            <div className="mt-4 flex items-center flex-wrap justify-center gap-5 md:mt-6">
               <CheckItem>Zero Sugar</CheckItem>
               <CheckItem>High in Protein</CheckItem>
               <CheckItem>Childhood Taste</CheckItem>
             </div>
 
             {/* CTA */}
-            <div className="mt-6 flex justify-center md:mt-8">
-              <button className="rounded-[10px] border-2 border-black/10 bg-[#11a847] px-6 py-3 text-[13px] font-extrabold uppercase tracking-wide text-white shadow-[0_4px_0_0_rgba(0,0,0,0.2)] transition-transform active:translate-y-[1px] md:text-[15px]">
+            <Link to="/product-details" className="mt-6 flex justify-center md:mt-8">
+              <Button>
                 DÉCOUVRIR TASTIES
-              </button>
-            </div>
+              </Button>
+            </Link>
 
             {/* Trust row */}
-            <div className="mt-5 flex flex-col items-center gap-2 md:mt-6">
+            <div className="my-5 flex flex-col sm:flex-row items-center justify-center gap-2 md:my-6">
               <div className="flex items-center gap-1">
                 {Array.from({ length: 5 }).map((_, i) => (
                   <span
                     key={i}
-                    className="inline-flex h-[18px] w-[26px] items-center justify-center rounded-[3px] bg-[#00b67a]"
+                    className="inline-flex size-6 items-center justify-center  bg-green-app"
                   >
                     <svg
                       width="16"
@@ -104,7 +96,6 @@ export default function HeroSection() {
               </p>
             </div>
           </div>
-        </div>
       </section>
       <section className = "bg-white flex flex-col items-center product-container pb-24" >
         <img src="/images/cereals-bowl.png" alt="cereals" className="w-full h-[50%]" />

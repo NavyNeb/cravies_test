@@ -87,9 +87,10 @@
   --orange-app: #e56924;
   --black-app: #2e2e2e;
   --green-app: #019c45;
-  --yellow-app: #f8f400;
+  --yellow-app: #F8CF00;
   --rose-app: #f8b3cf;
   --brown-app: #b48756;
+  --dark-brown-app: #722E19
   --sidebar: oklch(0.985 0 0);
   --sidebar-foreground: oklch(0.145 0 0);
   --sidebar-primary: oklch(0.205 0 0);
@@ -102,17 +103,16 @@
   --grid-margin: 28px;
   --grid-gutter: 12px;
 }
-
 html {
-  scroll-behavior: smooth;
+  width: 100%;
   overflow-x: hidden;
 }
-
 body {
   margin: 0;
   display: flex;
   place-items: start;
-  overflow-x: hidden;
+  min-width: 100vw;
+  min-height: 100vh;
 }
 
 @theme inline {
@@ -133,6 +133,7 @@ body {
   --color-yellow-app:  var(--yellow-app);
   --color-rose-app: var(--rose-app);
   --color-brown-app: var(--brown-app);
+  --color-dark-brown-app: var(--dark-brown-app);
   --color-primary-foreground: var(--primary-foreground);
   --color-secondary: var(--secondary);
   --color-secondary-foreground: var(--secondary-foreground);

@@ -1,5 +1,5 @@
+import { Card, CardContent } from "@/components/ui/card";
 import React from "react";
-import { Card, CardContent, CardFooter } from "../../../ui/card";
 
 type Props = {
   id: number;
@@ -8,6 +8,7 @@ type Props = {
   imageAlt: string;
   subtitle: string;
   bullets: string[];
+  skew?: boolean;
 };
 
 const CraviesCarouselCard: React.FC<Props> = ({
@@ -20,7 +21,8 @@ const CraviesCarouselCard: React.FC<Props> = ({
 }) => {
   return (
     <Card style={{  
-        rotate: id === 1 ? "-2deg" : id === 2 ? "3deg" : "1.5deg",
+        rotate: (id === 2 ? "-3deg" : id === 3 ? "3deg" : "0deg"),
+     transition: "transform 0.3s ease-in-out",
     }} className="py-0 h-[400px] md:h-[450px]">
       <CardContent className="px-0">
         {/* Image */}

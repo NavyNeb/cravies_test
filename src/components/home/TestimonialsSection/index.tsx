@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import SectionContainer from "../../common/SectionContainer";
 import TestimonialsCarousel from "./TestimonialsCarousel";
+import { Link } from "react-router-dom";
 
 
 export default function TestimonialsSection() {
@@ -21,12 +22,14 @@ export default function TestimonialsSection() {
           {" "}Chaos.
         </h2>
 
+<Link to="/product-details" >
         <Button     
           className={cn("bg-orange-app", 
             "hidden shrink-0 md:inline-flex")}
         >
           Build Your Bundle
         </Button>
+</Link>
       </div>
 
       {/* Carousel */}

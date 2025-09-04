@@ -5,12 +5,12 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center whitespace-nowrap rounded-[12px] border-[3px] border-black font-bold font-wosker transition-all duration-150 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] uppercase tracking-wider relative overflow-hidden hover:translate-x-[1px] hover:translate-y-[1px] active:translate-x-[2px] active:translate-y-[2px]",
+  "inline-flex items-center justify-center cursor-pointer whitespace-nowrap rounded-[12px] border-[3px] border-black font-bold font-wosker transition-all duration-150 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg:not([class*='size-'])]:size-4 shrink-0 [&_svg]:shrink-0 outline-none focus-visible:border-ring focus-visible:ring-ring/50 focus-visible:ring-[3px] uppercase tracking-wider relative overflow-hidden active:translate-x-[2px] active:translate-y-[2px]",
   {
     variants: {
       variant: {
         default:
-          "bg-green-app text-white shadow-lg before:bg-black-app ",
+          "bg-green-app text-white shadow-lg hover:translate-x-[1px] hover:translate-y-[1px] ",
         subscribe:
           "bg-green-500 text-white shadow-lg hover:bg-green-400",
         destructive:
@@ -43,9 +43,10 @@ function Button({
   variant,
   size,
   asChild = false,
+  withShadow = true,
   children,
   ...props
-}: React.ComponentProps<"button"> &
+}: React.ComponentProps<"button"> & { withShadow?: boolean } &
   VariantProps<typeof buttonVariants> & {
     asChild?: boolean
   }) {
@@ -58,7 +59,7 @@ function Button({
       {...props}
       style={{
         border: "3px solid #222",
-        boxShadow: "-4px 4px 0px #222",
+        boxShadow: withShadow ? "-4px 4px 0px #222" : "none",
       }}
     >
       {children}

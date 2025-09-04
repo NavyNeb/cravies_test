@@ -1,5 +1,6 @@
 import SectionContainer from "@/components/common/SectionContainer";
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 
 const FounderMessageSection = () => {
   return (
@@ -25,9 +26,9 @@ const FounderMessageSection = () => {
               <span className="font-bold">— Alex, Founder of Cravies</span>
             </div>
            {/* CTA Button */}
-          <div className="flex justify-center md:justify-start mt-6">
+          <Link to="/product-details" className="flex justify-center md:justify-start mt-6">
             <Button className="text-center" >BUILD YOUR BUNDLE</Button>
-         </div>
+         </Link>
           </div>
         </div>
         <div className="row-start-1 h-[348px] overflow-hidden rounded-lg border-[3px] border-black-app md:h-auto md:col-start-2">
