@@ -63,7 +63,7 @@ yarn preview
 
 Répartition approximative :
 - Configuration initiale et setup : 4h
-- Développement du composant carousel : 12h
+- Développement du composant : 12h
 - Design et stylisation : 10h
 - Tests et ajustements : 4h
 - Documentation et finalisation : 2h
