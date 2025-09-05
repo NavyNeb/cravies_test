@@ -1,6 +1,3 @@
- 
-/* eslint-disable @typescript-eslint/ban-ts-comment */
-
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ArrowRightIcon, ListFilterIcon } from "lucide-react";
@@ -163,10 +160,6 @@ export default function CraviesFooterSection() {
               <div className=" md:ml-auto">
                 <h3
                   className="mb-3 max-w-[320px] text-[26px] sm:text-[32px] font-wosker uppercase leading-7 tracking-wide text-orange-app"
-                  style={{
-                    // @ts-ignore
-                    "--o": ORANGE,
-                  }}
                 >
                   OUR EMAILS ARE ALL CEREAL,
                   WITH A BIT OF
