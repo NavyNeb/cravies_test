@@ -7,7 +7,7 @@ type Props = {
     scrollTo: (index: number) => void
 }
 
-const CarouselPagination: React.FC<Props> = ({ scrollTo, selectedIndex, slideCount }) => {
+const CarouselPagination: React.FC<Props> = ({ scrollTo, selectedIndex }) => {
   
     return (
       <div className={cn("flex justify-center space-x-2 mt-4 w-fit bg-white mx-auto p-2 rounded-2xl")} >

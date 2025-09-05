@@ -7,7 +7,7 @@ import { Badge } from "@/components/ui/badge";
 
 const Header = () => {
   const { pathname } = useLocation();
-  let isProductPage = pathname.includes('product-details');
+  const isProductPage = pathname.includes('product-details');
   return (
     <header className="px-4 sm:px-10 w-full bg-transparent fixed top-0 z-50 ">
       <nav className="flex items-center justify-between gap-8">

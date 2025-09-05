@@ -12,7 +12,7 @@ function BadgeCard({ b, idx }: Props ) {
       )}>
         <div
           className="relative grid size-[140px] place-items-center rounded-full border-[3px] border-black-app sm:size-[201px]"
-          style={{ backgroundColor: b.bg, // @ts-ignore
+          style={{ backgroundColor: b.bg, 
            }}
           aria-hidden
         >

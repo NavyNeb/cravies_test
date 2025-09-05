@@ -1,12 +1,14 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { FAQ, PACKS } from "@/data/mockData";
+import { FAQ } from "@/data/mockData";
 import { useMemo, useState } from "react";
 import RatingStars from "../../StatsSection/RatingStatsSummary/RatingStars";
 import FlavoursSection from "./FlavoursSection";
@@ -31,24 +33,12 @@ export default function VarietyPackComponent() {
   const [isMember, setIsMember] = useState(true);
   const [frequency, setFrequency] = useState<number>(30);
   const [applyDiscount, setApplyDiscount] = useState(true);
-  const [openFaq, setOpenFaq] = useState<number | null>(null);
 
   const totalBoxes = useMemo(
     () => Object.values(flavors).reduce((a, b) => a + b, 0),
     [flavors]
   );
-  const selectedPack = useMemo(() => PACKS.find((p) => p.id === pack)!, [pack]);
 
-  // Price model
-  const basePrice = selectedPack.price;
-  const memberDiscountPct = isMember && applyDiscount ? 0.2 : 0; // 20% off recurring
-  const totalPrice = useMemo(() => {
-    let p = basePrice;
-    // @ts-ignore
-    if (isMember) p -= 8; // @ts-ignore
-    p = Math.max(0, p * (1 - memberDiscountPct)); // @ts-ignore
-    return parseFloat(p.toFixed(2));
-  }, [basePrice, isMember, memberDiscountPct]);
 
   function bumpFlavor(key: FlavorKey, delta: 1 | -1) {
     setFlavors((prev) => {

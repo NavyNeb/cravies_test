@@ -1,34 +1,11 @@
-import React, { useMemo, useState } from "react";
-import { ChevronRight, ChevronDown, ListFilterIcon, ArrowRightIcon } from "lucide-react";
-import { Card, CardContent } from "@/components/ui/card";
+ 
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+
 import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ArrowRightIcon, ListFilterIcon } from "lucide-react";
+import React, { useMemo, useState } from "react";
 
-const ORANGE = "var(--orange-app)"; // headline/logo orange
-const YELLOW = "var(--yellow-app)"; // canvas background
-const GREEN = "var(--green-app)"; // instagram button
-
-function Wordmark() {
-  // Background mega “CRAVIES” (acts as a decorative watermark)
-  return (
-    <div
-      aria-hidden
-      className="pointer-events-none absolute inset-x-3 top-2 select-none md:inset-x-6 md:top-3"
-      style={{
-        color: ORANGE,
-        lineHeight: 0.75,
-        fontWeight: 900 as any,
-        letterSpacing: "-0.02em",
-      }}
-    >
-      {/* Desktop */}
-      <div className="hidden text-[150px] md:block lg:text-[190px] xl:text-[210px]">
-        CRAVIES
-      </div>
-      {/* Mobile */}
-      <div className="block text-[38px] md:hidden">CRAVIES</div>
-    </div>
-  );
-}
 
 export default function CraviesFooterSection() {
   const [email, setEmail] = useState("");
@@ -40,7 +17,6 @@ export default function CraviesFooterSection() {
     e.preventDefault();
     if (valid) {
       setStatus("ok");
-      // Replace with your real submit handler
       console.log("Subscribed:", email);
     } else {
       setStatus("err");

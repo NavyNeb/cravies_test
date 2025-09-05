@@ -1,12 +1,12 @@
-import React, { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
 import { motion } from 'framer-motion'
+import { useState } from 'react'
+import { useLocation } from 'react-router-dom'
 
 const NavLinks = () => {
 
     const [selectedLink, setSelectedLink] = useState<string>('shop')
     const { pathname } = useLocation();
-    let isProductPage = pathname.includes('product-details');
+    const isProductPage = pathname.includes('product-details');
     const links = [
         { name: 'Shop', value: 'shop', current: selectedLink === 'shop' },
         { name: 'Build your bundle', value: 'bundles', current: selectedLink === 'bundles' },
